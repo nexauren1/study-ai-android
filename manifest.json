@@ -1,0 +1,11 @@
+{
+  "name": "Study AI — Learn smarter",
+  "short_name": "Study AI",
+  "description": "A simple personal study space for summaries and flashcards.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#111827",
+  "icons": []
+}
