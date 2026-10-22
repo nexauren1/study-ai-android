@@ -1,32 +1,39 @@
-# Study AI — Learn smarter
+# DreamForge AI — Native Android prototype
 
-A mobile-first study app prototype designed to start at **€0**, built as a Progressive Web App (PWA) so it can run on Android without an app-store release.
+A native Android app prototype for an AI image generator, built with Kotlin and Jetpack Compose.
 
-## Current MVP
-- Mobile-first dark interface
-- Paste and save study notes in local browser storage
-- Create a quick extractive summary (not an AI-generated answer)
-- Turn lines from your notes into review flashcards
-- Flashcard navigation and a local library
-- Basic offline caching via a service worker
+## Current app UI
+- Prompt entry field
+- Visual style selection: Cinematic, Anime, Realistic, 3D, Illustration and Logo
+- Aspect ratio selection: 1:1, 3:4, 9:16 and 16:9
+- Create, Gallery and Settings navigation
+- Dark, mobile-first interface
 
-## Run it
-Open `index.html` in a browser, or publish the repository with GitHub Pages and open the resulting HTTPS URL on your Android phone. For installation, open the site in Chrome and choose **Install app** or **Add to Home screen** if offered.
+## Important: image generation is not connected yet
+The current **Generate image** action is a placeholder. No image model or API has been connected, so the app does not generate real images yet. The next milestone is to choose an image-generation provider and connect it through a secure backend. Do not embed private API keys in the Android app.
 
-## Publish with GitHub Pages
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch `main` and folder `/(root)`, then save.
-4. Wait for deployment and open the site URL shown there.
+## Build an APK
+The GitHub Actions workflow in `.github/workflows/android.yml` attempts to build a debug APK on pushes and pull requests.
 
-GitHub's official instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+Once the workflow succeeds:
+1. Open the repository's **Actions** tab.
+2. Open the latest **Android build** run.
+3. Download the generated APK artifact (we can add artifact upload to the workflow next if needed).
+
+You can also open this project in Android Studio and run the `:app` configuration on an Android device or emulator.
+
+## Build configuration
+- Kotlin
+- Jetpack Compose + Material 3
+- Minimum Android version: Android 7.0 (API 24)
+- Java 17
+- No API key required for the current UI prototype
 
 ## Roadmap
-- [ ] Distinctive product name and identity
-- [ ] AI provider integration through a secure backend (never put API keys in client-side code)
-- [ ] Quiz generation and progress tracking
-- [ ] Export/import and data backup
-- [ ] Accessibility, localization, and automated tests
-
-## Important
-This is an early prototype. The summary feature selects sentences from the user's text; it does not call an AI model. Notes and cards are stored locally in the browser and may be lost if site data is cleared. No API key or backend is configured yet.
+- [ ] Confirm Android build succeeds and distribute a test APK
+- [ ] Select an image-generation model/provider that fits the budget
+- [ ] Add a secure backend so API keys stay private
+- [ ] Generate, preview, save and share images
+- [ ] Persist generation history locally
+- [ ] Add usage limits and a sustainable monetization plan
+- [ ] Choose and check a distinctive public brand name
